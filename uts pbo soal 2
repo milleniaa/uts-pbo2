@@ -1,0 +1,69 @@
+using System;
+
+namespace pbouts2
+{
+        class RetailItem
+        {
+            private String Description; private int UnitsOnHand; private double Price;
+        private string v1;
+        private int v2;
+        private double v3;
+
+        public RetailItem(string v1, int v2, double v3)
+        {
+            this.v1 = v1;
+            this.v2 = v2;
+            this.v3 = v3;
+        }
+
+        public void setDescription(String Description)
+            {
+                this.Description = Description;
+            }
+
+            public String getDescription()
+            {
+                return Description;
+            }
+
+            public void setUnitsOnHand(int UnitsOnHand)
+            {
+                this.UnitsOnHand = UnitsOnHand;
+            }
+
+            public int getUnitsOnHand()
+            {
+                return UnitsOnHand;
+            }
+
+            public void setPrice(double Price)
+            {
+                this.Price = Price;
+            }
+
+            public double getPrice()
+            {
+                return Price;
+            }
+        }
+    
+    namespace pbouts2
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                RetailItem[] item = new RetailItem[3]; item[0] = new RetailItem("Jacket", 12, 59.95); item[1] = new RetailItem("Jeans", 40, 34.95); item[2] = new RetailItem("Shirt", 20, 24.95);
+
+                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine("\t|Description\t|UnitsOnHand\t|Price");
+                Console.WriteLine("---------------------------------------------");
+                for (int i = 0; i < item.Length; i++) { Console.WriteLine("Item " + (i + 1) + "\t|" + item[i].getDescription() + "\t\t|" + item[i].getUnitsOnHand() + "\t\t|$" + item[i].getPrice()); }
+                Console.WriteLine("---------------------------------");
+
+                Console.ReadKey();
+            }
+        }
+    }
+    
+}
